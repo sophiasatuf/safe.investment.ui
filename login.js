@@ -6,8 +6,8 @@ function addUser(fullName, age, senha, email, cpf) {
 
 function loginUser(email, senha) {
     
-    fetch(`http://localhost:6789/user/login?email=${email}&senha=${senha}`, { mode: 'no-cors' })
-    .then(T => T.json())
+    fetch(`http://localhost:6789/user/login?email=${email}&senha=${senha}`, { method: "POST", mode: 'cors' })
+    .then(T => T.text())
     .then(usuario => {
       console.log(usuario)
     })
