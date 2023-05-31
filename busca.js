@@ -16,7 +16,7 @@ function busca() {
             `
           <div class="vid-list">
             <a href="play-video.html"
-              ><img src="img/thumbnail1.png" alt="vid1" class="thumbnail"
+              ><img onclick="localStorage.setItem('publicacaoId', '${publicacao.codigo}')" src="img/thumbnail1.png" alt="vid1" class="thumbnail"
             /></a>
             <div class="flex-div">
               <img src="img/Jack.png" alt="user" />
@@ -28,15 +28,14 @@ function busca() {
                 <p>${
                   publicacao.visualizacoes
                 } Visualizaçõe(s) &bull; há ${Math.floor(
-              (new Date() -
-                new Date(publicacao.datapostagem)) / (24 * 60 * 60 * 1000)
+              (new Date() - new Date(publicacao.datapostagem)) /
+                (24 * 60 * 60 * 1000)
             )} dia(s)</p>
               </div>
             </div>
           </div>
         `;
         });
-        console.log(container);
         container.innerHTML = "<div class='list-container'>" + res + "</div>";
       }
     });

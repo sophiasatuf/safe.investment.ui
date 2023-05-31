@@ -25,78 +25,143 @@
       </div>
       <div class="nav-middle flex-div">
         <div class="search-box flex-div">
-          <input type="text" placeholder="Search" />
-          <img src="img/search.png" alt="Search" />
+          <input id="search-box-field" type="text" placeholder="Search" />
+          <img onclick="busca()" src="img/search.png" alt="Search" />
         </div>
         <img src="img/voice-search.png" alt="mic-icon" class="mic-icon" />
       </div>
       <div class="nav-right flex-div">
-        <!-- Para alinhar os ícones no centro da navbar verticalmente -->
-        <img src="img/video-camera.png" alt="upload" />
-        <img src="img/more.png" alt="more" />
+        <!-- Para alinhar os ícones da direita no centro da navbar verticalmente -->
+        <img
+          id="upload-btn"
+          src="img/video-camera.png"
+          alt="upload"
+          onclick="openModal()"
+        />
+        <!----------- modal ----------->
+        <div id="modal-bkg">
+          <div id="modal-content" class="modal-content-off">
+            <h4>Adicionar Publicação</h4>
+            <form id="add-publi-form" method="post" onsubmit="">
+              <div>
+                <label for="urlvideo">URL do vídeo</label><br />
+                <input type="text" name="urlvideo" id="urlvideo" />
+              </div>
+              <div>
+                <label for="hashtags">Hashtags </label><br />
+                <input type="text" name="hashtags" id="hashtags" />
+              </div>
+              <div>
+                <label for="titulo">Titulo </label><br />
+                <input type="text" name="titulo" id="titulo" />
+              </div>
+              <div>
+                <label for="classe-select">Classe </label><br />
+                <select name="classe-select" id="classe-select"></select>
+              </div>
+              <div>
+                <button type="submit" id="submit" name="submit" value="submit">
+                  Adicionar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <img
+          id="add-classe-btn"
+          src="img/more.png"
+          alt="more"
+          onclick="openModalClasse()"
+        />
+        <div id="modal-classe-bkg">
+          <div id="modal-classe-content" class="modal-classe-content-off">
+            <h4>Adicionar Classe</h4>
+            <form id="add-classe-form" method="post" onsubmit="">
+              <div>
+                <label for="titulo-classe">Titulo </label><br />
+                <input type="text" name="titulo-classe" id="titulo-classe" />
+              </div>
+              <div>
+                <label for="descricao">Descricao </label><br />
+                <input type="text" name="descricao" id="descricao" />
+              </div>
+              <div>
+                <button type="submit" id="submit" name="submit" value="submit">
+                  Adicionar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
         <img src="img/notification.png" alt="notification" />
-        <img src="img/Jack.png" alt="Jack" class="user-icon" />
+        <a href="login.html"
+          ><img src="img/Jack.png" alt="Jack" class="user-icon"
+        /></a>
       </div>
     </nav>
 
     <!----------- video ----------->
-    <div class="container play-container">
+    <div class="container play-container" id="container-id">
       <div class="row">
         <div class="play-video">
-          <!-- <video controls autoplay>
+          <div id="video-gen">
+            <!-- <video controls autoplay>
                     <source src="img/video.mp4" type="video/mp4">
                 </video> -->
-          <iframe
-            width="100%"
-            height="450px"
-            src="https://www.youtube.com/embed/xzEUC19OtDk"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-          <!-- PAREI NO CAMPO EM BAIXO DO VÍDEO HORA 1:23 -->
-          <div class="tags">
-            <a href="">#Investing</a> <a href="">#HTML</a>
-            <a href="">#Lucro</a> <a href="">#Financeiro</a>
-            <a
-              href="https://www.pucminas.br/destaques/Paginas/default.aspx"
-              target="_blank"
-              >#PucMinas</a
-            >
-          </div>
-          <h3>O melhor canal para aprender a investir de forma eficiente</h3>
-          <div class="play-video-info">
-            <p>1225 Visualizações &bull; há 3 dias</p>
-            <div>
-              <a href=""><img src="img/like.png" alt="like" />125</a>
-              <a href=""><img src="img/dislike.png" alt="dislike" />1</a>
-              <a href=""><img src="img/share.png" alt="share" />Compartilhar</a>
-              <a href=""><img src="img/save.png" alt="save" />Salvar</a>
+            <!-- <iframe
+              width="100%"
+              height="450px"
+              src="https://www.youtube.com/embed/xzEUC19OtDk"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe> -->
+            <!-- PAREI NO CAMPO EM BAIXO DO VÍDEO HORA 1:23 -->
+            <!-- <div class="tags">
+              <a href="">#Investing</a> <a href="">#HTML</a>
+              <a href="">#Lucro</a> <a href="">#Financeiro</a>
+              <a
+                href="https://www.pucminas.br/destaques/Paginas/default.aspx"
+                target="_blank"
+                >#PucMinas</a
+              >
             </div>
-          </div>
-          <hr />
-          <div class="publisher">
-            <img src="img/Jack.png" alt="Canal" />
-            <div>
-              <p>Safe Investment</p>
-              <span>500k Inscritos</span>
+            <h3>O melhor canal para aprender a investir de forma eficiente</h3>
+            <div class="play-video-info">
+              <p>1225 Visualizações &bull; há 3 dias</p>
+              <div>
+                <a href=""><img src="img/like.png" alt="like" />125</a>
+                <a href=""><img src="img/dislike.png" alt="dislike" />1</a>
+                <a href=""
+                  ><img src="img/share.png" alt="share" />Compartilhar</a
+                >
+                <a href=""><img src="img/save.png" alt="save" />Salvar</a>
+              </div>
             </div>
-            <button type="button">Inscrever-se</button>
-          </div>
-          <div class="vid-description">
-            <p>
-              Se você ficou com alguma dúvida envie um e-mail para:
-              <a href="" class="email">professorjacksparrow@gmail.com</a>
-            </p>
-            <p>
-              Inscreva-se no nosso canal para mais conteúdos te ensinando a
-              investir!
-            </p>
             <hr />
-            <h4>134 Comentários</h4>
-            <div class="add-comment">
-              <img src="img/Jack.png" alt="User" />
-              <input type="text" placeholder="Adicione um comentário..." />
+            <div class="publisher">
+              <img src="img/Jack.png" alt="Canal" />
+              <div>
+                <p>Safe Investment</p>
+                <span>500k Inscritos</span>
+              </div>
+              <button type="button">Inscrever-se</button>
+            </div>
+            <div class="vid-description">
+              <p>
+                Se você ficou com alguma dúvida envie um e-mail para:
+                <a href="" class="email">professorjacksparrow@gmail.com</a>
+              </p>
+              <p>
+                Inscreva-se no nosso canal para mais conteúdos te ensinando a
+                investir!
+              </p>
+              <hr />
+              <h4>134 Comentários</h4>
+              <div class="add-comment">
+                <img src="img/Jack.png" alt="User" />
+                <input type="text" placeholder="Adicione um comentário..." />
+              </div>
             </div>
             <!-- comentário 1 -->
             <div class="old-comment">
@@ -117,7 +182,7 @@
                   <span>Responder</span>
                   <a href="">Todas as respostas</a>
                 </div>
-              </div>
+              </div> -->
             </div>
             <!-- comentário 2 -->
             <div class="old-comment">
@@ -255,5 +320,9 @@
       </div>
     </div>
     <script src="script.js"></script>
+    <script src="addPublicacao.js"></script>
+    <script src="addClasse.js"></script>
+    <script src="busca.js"></script>
+    <script src="play-video.js"></script>
   </body>
 </html>
