@@ -1,196 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Play Video - Safe Investment</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <!-- Fonte google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!----------- navbar ----------->
     <nav class="flex-div">
-        <div class="nav-left flex-div">
-            <img src="img/menu.png" alt="menu" class="menu-icon">
-            <a href="index.html"><img src="img/logo-safe.jpeg" alt="logo" class="logo"></a>
+      <div class="nav-left flex-div">
+        <img src="img/menu.png" alt="menu" class="menu-icon" />
+        <a href="index.html"
+          ><img src="img/logo-safe.jpeg" alt="logo" class="logo"
+        /></a>
+      </div>
+      <div class="nav-middle flex-div">
+        <div class="search-box flex-div">
+          <input type="text" placeholder="Search" />
+          <img src="img/search.png" alt="Search" />
         </div>
-        <div class="nav-middle flex-div">
-            <div class="search-box flex-div">
-                <input type="text" placeholder="Search">
-                <img src="img/search.png" alt="Search">
-            </div>
-            <img src="img/voice-search.png" alt="mic-icon" class="mic-icon">
-        </div>
-        <div class="nav-right flex-div"> <!-- Para alinhar os ícones no centro da navbar verticalmente -->
-            <img src="img/video-camera.png" alt="upload">
-            <img src="img/more.png" alt="more">
-            <img src="img/notification.png" alt="notification">
-            <img src="img/Jack.png" alt="Jack" class="user-icon">
-        </div>
+        <img src="img/voice-search.png" alt="mic-icon" class="mic-icon" />
+      </div>
+      <div class="nav-right flex-div">
+        <!-- Para alinhar os ícones no centro da navbar verticalmente -->
+        <img src="img/video-camera.png" alt="upload" />
+        <img src="img/more.png" alt="more" />
+        <img src="img/notification.png" alt="notification" />
+        <img src="img/Jack.png" alt="Jack" class="user-icon" />
+      </div>
     </nav>
-    
+
     <!----------- video ----------->
     <div class="container play-container">
-        <div class="row">
-            <div class="play-video">
-                <video controls autoplay>
+      <div class="row">
+        <div class="play-video">
+          <!-- <video controls autoplay>
                     <source src="img/video.mp4" type="video/mp4">
-                </video>
-                <!-- PAREI NO CAMPO EM BAIXO DO VÍDEO HORA 1:23 -->
-                <div class="tags">
-                    <a href="">#Investing</a> <a href="">#HTML</a> <a href="">#Lucro</a> <a href="">#Financeiro</a> <a href="https://www.pucminas.br/destaques/Paginas/default.aspx" target="_blank">#PucMinas</a>
-                </div>
-                <h3>O melhor canal para aprender a investir de forma eficiente</h3>
-                <div class="play-video-info">
-                    <p>1225 Visualizações &bull; há 3 dias</p>
-                    <div>
-                        <a href=""><img src="img/like.png" alt="like">125</a>
-                        <a href=""><img src="img/dislike.png" alt="dislike">1</a>
-                        <a href=""><img src="img/share.png" alt="share">Compartilhar</a>
-                        <a href=""><img src="img/save.png" alt="save">Salvar</a>
-                    </div>
-                </div>
-                <hr>
-                <div class="publisher">
-                    <img src="img/Jack.png" alt="Canal">
-                    <div>
-                        <p>Safe Investment</p>
-                        <span>500k Inscritos</span>
-                    </div>
-                    <button type="button">Inscrever-se</button>
-                </div>
-                <div class="vid-description">
-                    <p>Se você ficou com alguma dúvida envie um e-mail para: <a href="" class="email">professorjacksparrow@gmail.com</a></p>
-                    <p>Inscreva-se no nosso canal para mais conteúdos te ensinando a investir!</p>
-                    <hr>
-                    <h4>134 Comentários</h4>
-                    <div class="add-comment">
-                        <img src="img/Jack.png" alt="User">
-                        <input type="text" placeholder="Adicione um comentário...">
-                    </div>
-                    <!-- comentário 1 -->
-                    <div class="old-comment">
-                        <img src="img/cameron.png" alt="User">
-                        <div>
-                            <h3>Sophia Satuf <span>há 2 dias</span></h3>
-                            <p>Investir é uma ótima maneira de alcançar seus objetivos financeiros a longo prazo. Mas lembre-se sempre de fazer uma pesquisa cuidadosa e investir com sabedoria para minimizar os riscos e maximizar os retornos.</p>
-                            <div class="comment-action">
-                                <img src="img/like.png" alt="like">
-                                <span>244</span>
-                                <img src="img/dislike.png" alt="dislike">
-                                <span>1</span>
-                                <span>Responder</span>
-                                <a href="">Todas as respostas</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- comentário 2 -->
-                    <div class="old-comment">
-                        <img src="img/simon.png" alt="User">
-                        <div>
-                            <h3>Eduardo Rocha <span>há 2 dias</span></h3>
-                            <p>Investir é uma forma inteligente de fazer o seu dinheiro trabalhar para você. Esse vídeo apresenta dicas e orientações úteis para você começar a investir de forma segura e eficiente. Não deixe de conferir!</p>
-                            <div class="comment-action">
-                                <img src="img/like.png" alt="like">
-                                <span>135</span>
-                                <img src="img/dislike.png" alt="dislike">
-                                <span>1</span>
-                                <span>Responder</span>
-                                <a href="">Todas as respostas</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </video> -->
+          <iframe
+            width="100%"
+            height="450px"
+            src="https://www.youtube.com/embed/xzEUC19OtDk"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <!-- PAREI NO CAMPO EM BAIXO DO VÍDEO HORA 1:23 -->
+          <div class="tags">
+            <a href="">#Investing</a> <a href="">#HTML</a>
+            <a href="">#Lucro</a> <a href="">#Financeiro</a>
+            <a
+              href="https://www.pucminas.br/destaques/Paginas/default.aspx"
+              target="_blank"
+              >#PucMinas</a
+            >
+          </div>
+          <h3>O melhor canal para aprender a investir de forma eficiente</h3>
+          <div class="play-video-info">
+            <p>1225 Visualizações &bull; há 3 dias</p>
+            <div>
+              <a href=""><img src="img/like.png" alt="like" />125</a>
+              <a href=""><img src="img/dislike.png" alt="dislike" />1</a>
+              <a href=""><img src="img/share.png" alt="share" />Compartilhar</a>
+              <a href=""><img src="img/save.png" alt="save" />Salvar</a>
             </div>
-            <div class="right-sidebar">
-                <!-- video 1 -->
-                <div class="side-video-list">
-                    <a href="" class="small-thumbnail"><img src="img/thumbnail1.png" alt="thumbnail"></a>
-                    <div class="vid-info">
-                        <a href="">A importância do planejamento financeiro para seus investimentos</a>
-                        <p>Safe Investment</p>
-                        <p>15k Visualizações</p>
-                    </div>
-                </div>
-                <!-- video 2 -->
-                <div class="side-video-list">
-                    <a href="" class="small-thumbnail"><img src="img/thumbnail2.png" alt="thumbnail"></a>
-                    <div class="vid-info">
-                        <a href="">5 dicas para começar a investir com pouco dinheiro</a>
-                        <p>Investindo com Sabedoria</p>
-                        <p>15k Visualizações</p>
-                    </div>
-                </div>
-                <!-- video 3 -->
-                <div class="side-video-list">
-                    <a href="" class="small-thumbnail"><img src="img/thumbnail3.png" alt="thumbnail"></a>
-                    <div class="vid-info">
-                        <a href="">Os principais erros que os iniciantes em investimentos cometem</a>
-                        <p>Investindo em Futuro</p>
-                        <p>15k Visualizações</p>
-                    </div>
-                </div>
-                <!-- video 4 -->
-                <div class="side-video-list">
-                    <a href="" class="small-thumbnail"><img src="img/thumbnail4.png" alt="thumbnail"></a>
-                    <div class="vid-info">
-                        <a href="">Como diversificar sua carteira de investimentos</a>
-                        <p>Investimentos em Foco</p>
-                        <p>15k Visualizações</p>
-                    </div>
-                </div>
-                <!-- video 5 -->
-                <div class="side-video-list">
-                    <a href="" class="small-thumbnail"><img src="img/thumbnail5.png" alt="thumbnail"></a>
-                    <div class="vid-info">
-                        <a href="">Os melhores investimentos para iniciantes em 2023</a>
-                        <p>Investir e Crescer</p>
-                        <p>15k Visualizações</p>
-                    </div>
-                </div>
-                <!-- video 6 -->
-                <div class="side-video-list">
-                    <a href="" class="small-thumbnail"><img src="img/thumbnail6.png" alt="thumbnail"></a>
-                    <div class="vid-info">
-                        <a href="">Investimentos de curto prazo vs investimentos de longo prazo: qual escolher?</a>
-                        <p>Investimentos Inteligentes</p>
-                        <p>15k Visualizações</p>
-                    </div>
-                </div>
-                <!-- video 7 -->
-                <div class="side-video-list">
-                    <a href="" class="small-thumbnail"><img src="img/thumbnail7.png" alt="thumbnail"></a>
-                    <div class="vid-info">
-                        <a href="">Como investir em ações sem medo</a>
-                        <p>Mundo dos Investimentos</p>
-                        <p>15k Visualizações</p>
-                    </div>
-                </div>
-                <!-- video 8 -->
-                <div class="side-video-list">
-                    <a href="" class="small-thumbnail"><img src="img/thumbnail8.png" alt="thumbnail"></a>
-                    <div class="vid-info">
-                        <a href="">O que é o mercado financeiro e como funciona</a>
-                        <p>Investimentos para Todos</p>
-                        <p>15k Visualizações</p>
-                    </div>
-                </div>
-                <!-- video 9 -->
-                <div class="side-video-list">
-                    <a href="" class="small-thumbnail"><img src="img/thumbnail1.png" alt="thumbnail"></a>
-                    <div class="vid-info">
-                        <a href="">Como lidar com a volatilidade do mercado de ações</a>
-                        <p>Investimentos em Ação</p>
-                        <p>15k Visualizações</p>
-                    </div>
-                </div>
+          </div>
+          <hr />
+          <div class="publisher">
+            <img src="img/Jack.png" alt="Canal" />
+            <div>
+              <p>Safe Investment</p>
+              <span>500k Inscritos</span>
             </div>
+            <button type="button">Inscrever-se</button>
+          </div>
+          <div class="vid-description">
+            <p>
+              Se você ficou com alguma dúvida envie um e-mail para:
+              <a href="" class="email">professorjacksparrow@gmail.com</a>
+            </p>
+            <p>
+              Inscreva-se no nosso canal para mais conteúdos te ensinando a
+              investir!
+            </p>
+            <hr />
+            <h4>134 Comentários</h4>
+            <div class="add-comment">
+              <img src="img/Jack.png" alt="User" />
+              <input type="text" placeholder="Adicione um comentário..." />
+            </div>
+            <!-- comentário 1 -->
+            <div class="old-comment">
+              <img src="img/cameron.png" alt="User" />
+              <div>
+                <h3>Sophia Satuf <span>há 2 dias</span></h3>
+                <p>
+                  Investir é uma ótima maneira de alcançar seus objetivos
+                  financeiros a longo prazo. Mas lembre-se sempre de fazer uma
+                  pesquisa cuidadosa e investir com sabedoria para minimizar os
+                  riscos e maximizar os retornos.
+                </p>
+                <div class="comment-action">
+                  <img src="img/like.png" alt="like" />
+                  <span>244</span>
+                  <img src="img/dislike.png" alt="dislike" />
+                  <span>1</span>
+                  <span>Responder</span>
+                  <a href="">Todas as respostas</a>
+                </div>
+              </div>
+            </div>
+            <!-- comentário 2 -->
+            <div class="old-comment">
+              <img src="img/simon.png" alt="User" />
+              <div>
+                <h3>Eduardo Rocha <span>há 2 dias</span></h3>
+                <p>
+                  Investir é uma forma inteligente de fazer o seu dinheiro
+                  trabalhar para você. Esse vídeo apresenta dicas e orientações
+                  úteis para você começar a investir de forma segura e
+                  eficiente. Não deixe de conferir!
+                </p>
+                <div class="comment-action">
+                  <img src="img/like.png" alt="like" />
+                  <span>135</span>
+                  <img src="img/dislike.png" alt="dislike" />
+                  <span>1</span>
+                  <span>Responder</span>
+                  <a href="">Todas as respostas</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="right-sidebar">
+          <!-- video 1 -->
+          <div class="side-video-list">
+            <a href="" class="small-thumbnail"
+              ><img src="img/thumbnail1.png" alt="thumbnail"
+            /></a>
+            <div class="vid-info">
+              <a href=""
+                >A importância do planejamento financeiro para seus
+                investimentos</a
+              >
+              <p>Safe Investment</p>
+              <p>15k Visualizações</p>
+            </div>
+          </div>
+          <!-- video 2 -->
+          <div class="side-video-list">
+            <a href="" class="small-thumbnail"
+              ><img src="img/thumbnail2.png" alt="thumbnail"
+            /></a>
+            <div class="vid-info">
+              <a href="">5 dicas para começar a investir com pouco dinheiro</a>
+              <p>Investindo com Sabedoria</p>
+              <p>15k Visualizações</p>
+            </div>
+          </div>
+          <!-- video 3 -->
+          <div class="side-video-list">
+            <a href="" class="small-thumbnail"
+              ><img src="img/thumbnail3.png" alt="thumbnail"
+            /></a>
+            <div class="vid-info">
+              <a href=""
+                >Os principais erros que os iniciantes em investimentos
+                cometem</a
+              >
+              <p>Investindo em Futuro</p>
+              <p>15k Visualizações</p>
+            </div>
+          </div>
+          <!-- video 4 -->
+          <div class="side-video-list">
+            <a href="" class="small-thumbnail"
+              ><img src="img/thumbnail4.png" alt="thumbnail"
+            /></a>
+            <div class="vid-info">
+              <a href="">Como diversificar sua carteira de investimentos</a>
+              <p>Investimentos em Foco</p>
+              <p>15k Visualizações</p>
+            </div>
+          </div>
+          <!-- video 5 -->
+          <div class="side-video-list">
+            <a href="" class="small-thumbnail"
+              ><img src="img/thumbnail5.png" alt="thumbnail"
+            /></a>
+            <div class="vid-info">
+              <a href="">Os melhores investimentos para iniciantes em 2023</a>
+              <p>Investir e Crescer</p>
+              <p>15k Visualizações</p>
+            </div>
+          </div>
+          <!-- video 6 -->
+          <div class="side-video-list">
+            <a href="" class="small-thumbnail"
+              ><img src="img/thumbnail6.png" alt="thumbnail"
+            /></a>
+            <div class="vid-info">
+              <a href=""
+                >Investimentos de curto prazo vs investimentos de longo prazo:
+                qual escolher?</a
+              >
+              <p>Investimentos Inteligentes</p>
+              <p>15k Visualizações</p>
+            </div>
+          </div>
+          <!-- video 7 -->
+          <div class="side-video-list">
+            <a href="" class="small-thumbnail"
+              ><img src="img/thumbnail7.png" alt="thumbnail"
+            /></a>
+            <div class="vid-info">
+              <a href="">Como investir em ações sem medo</a>
+              <p>Mundo dos Investimentos</p>
+              <p>15k Visualizações</p>
+            </div>
+          </div>
+          <!-- video 8 -->
+          <div class="side-video-list">
+            <a href="" class="small-thumbnail"
+              ><img src="img/thumbnail8.png" alt="thumbnail"
+            /></a>
+            <div class="vid-info">
+              <a href="">O que é o mercado financeiro e como funciona</a>
+              <p>Investimentos para Todos</p>
+              <p>15k Visualizações</p>
+            </div>
+          </div>
+          <!-- video 9 -->
+          <div class="side-video-list">
+            <a href="" class="small-thumbnail"
+              ><img src="img/thumbnail1.png" alt="thumbnail"
+            /></a>
+            <div class="vid-info">
+              <a href="">Como lidar com a volatilidade do mercado de ações</a>
+              <p>Investimentos em Ação</p>
+              <p>15k Visualizações</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

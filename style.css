@@ -72,6 +72,50 @@ nav {
     width: 15px;
 }
 
+.camera-btn-aluno{
+  display: none;
+}
+
+.block-btn-aluno{
+  display: none;
+}
+
+/*----------- modal -----------*/
+
+.modal-bkg{
+  background-color: #fff;
+  position: fixed;
+  top: 7vh;
+  padding: 9px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content-off {
+  display: none;
+}
+
+.modal-content {
+  color: black;
+}
+
+.modal-classe-bkg{
+  background-color: #fff;
+  position: fixed;
+  top: 7vh;
+  padding: 9px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-classe-content-off {
+  display: none;
+}
+
+.modal-classe-content {
+  color: black;
+}
+
 /*----------- sidebar -----------*/
 .sidebar {
     background: #fff;

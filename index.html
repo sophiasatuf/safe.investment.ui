@@ -1,196 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safe Investment</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Fonte google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Safe Investment</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Fonte google -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-</head>
+  <body>
+    <!----------- navbar ----------->
+    <nav class="flex-div">
+      <div class="nav-left flex-div">
+        <img src="img/menu.png" alt="menu" class="menu-icon" />
+        <a href="index.html"
+          ><img src="img/logo-safe.jpeg" alt="logo" class="logo"
+        /></a>
+      </div>
+      <div class="nav-middle flex-div">
+        <div class="search-box flex-div">
+          <input id="search-box-field" type="text" placeholder="Search" />
+          <img onclick="busca()" src="img/search.png" alt="Search" />
+        </div>
+        <img src="img/voice-search.png" alt="mic-icon" class="mic-icon" />
+      </div>
+      <div class="nav-right flex-div">
+        <!-- Para alinhar os ícones da direita no centro da navbar verticalmente -->
+        <img
+          id="upload-btn"
+          src="img/video-camera.png"
+          alt="upload"
+          onclick="openModal()"
+        />
+        <!----------- modal ----------->
+        <div id="modal-bkg">
+          <div id="modal-content" class="modal-content-off">
+            <h4>Adicionar Publicação</h4>
+            <form id="add-publi-form" method="post" onsubmit="">
+              <div>
+                <label for="urlvideo">URL do vídeo</label><br />
+                <input type="text" name="urlvideo" id="urlvideo" />
+              </div>
+              <div>
+                <label for="hashtags">Hashtags </label><br />
+                <input type="text" name="hashtags" id="hashtags" />
+              </div>
+              <div>
+                <label for="titulo">Titulo </label><br />
+                <input type="text" name="titulo" id="titulo" />
+              </div>
+              <div>
+                <label for="classe-select">Classe </label><br />
+                <select name="classe-select" id="classe-select"></select>
+              </div>
+              <div>
+                <button type="submit" id="submit" name="submit" value="submit">
+                  Adicionar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <img
+          id="add-classe-btn"
+          src="img/more.png"
+          alt="more"
+          onclick="openModalClasse()"
+        />
+        <div id="modal-classe-bkg">
+          <div id="modal-classe-content" class="modal-classe-content-off">
+            <h4>Adicionar Classe</h4>
+            <form id="add-classe-form" method="post" onsubmit="">
+              <div>
+                <label for="titulo-classe">Titulo </label><br />
+                <input type="text" name="titulo-classe" id="titulo-classe" />
+              </div>
+              <div>
+                <label for="descricao">Descricao </label><br />
+                <input type="text" name="descricao" id="descricao" />
+              </div>
+              <div>
+                <button type="submit" id="submit" name="submit" value="submit">
+                  Adicionar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <img src="img/notification.png" alt="notification" />
+        <a href="login.html"
+          ><img src="img/Jack.png" alt="Jack" class="user-icon"
+        /></a>
+      </div>
+    </nav>
 
-<body>
-  <!----------- navbar ----------->
-  <nav class="flex-div">
-    <div class="nav-left flex-div">
-      <img src="img/menu.png" alt="menu" class="menu-icon">
-      <a href="index.html"><img src="img/logo-safe.jpeg" alt="logo" class="logo"></a>
-    </div>
-    <div class="nav-middle flex-div">
-      <div class="search-box flex-div">
-        <input type="text" placeholder="Search">
-        <img src="img/search.png" alt="Search">
+    <!----------- sidebar ----------->
+    <div class="sidebar">
+      <div class="shortcut-links">
+        <a href=""
+          ><img src="img/home.png" alt="home" />
+          <p>Home</p>
+        </a>
+        <a href=""
+          ><img src="img/subscriprion.png" alt="home" />
+          <p>Inscrições</p>
+        </a>
+        <a href=""
+          ><img src="img/library.png" alt="home" />
+          <p>Biblioteca</p>
+        </a>
+        <a href=""
+          ><img src="img/history.png" alt="home" />
+          <p>Histórico</p>
+        </a>
+        <a href=""
+          ><img src="img/playlist.png" alt="home" />
+          <p>Classes</p>
+        </a>
+        <a href=""
+          ><img src="img/messages.png" alt="home" />
+          <p>Notificações</p>
+        </a>
+        <a href=""
+          ><img src="img/show-more.png" alt="home" />
+          <p>Mais</p>
+        </a>
+        <hr />
       </div>
-      <img src="img/voice-search.png" alt="mic-icon" class="mic-icon">
+      <div class="subscribed-list">
+        <h3>INSCRIÇÕES</h3>
+        <a href=""
+          ><img src="img/Jack.png" alt="User" />
+          <p>Jack Sparrow</p>
+        </a>
+        <a href=""
+          ><img src="img/simon.png" alt="User" />
+          <p>Raul Fonseca</p>
+        </a>
+        <a href=""
+          ><img src="img/tom.png" alt="User" />
+          <p>Eduardo Rocha</p>
+        </a>
+        <a href=""
+          ><img src="img/cameron.png" alt="User" />
+          <p>Sophia Satuf</p>
+        </a>
+        <a href=""
+          ><img src="img/megan.png" alt="User" />
+          <p>Davi Pinho</p>
+        </a>
+      </div>
     </div>
-    <div class="nav-right flex-div">
-      <!-- Para alinhar os ícones da direita no centro da navbar verticalmente -->
-      <img src="img/video-camera.png" alt="upload">
-      <img src="img/more.png" alt="more">
-      <img src="img/notification.png" alt="notification">
-      <a href="login.html"><img src="img/Jack.png" alt="Jack" class="user-icon"></a>
-    </div>
-  </nav>
 
-  <!----------- sidebar ----------->
-  <div class="sidebar">
-    <div class="shortcut-links">
-      <a href=""><img src="img/home.png" alt="home">
-        <p>Home</p>
-      </a>
-      <a href=""><img src="img/explore.png" alt="home">
-        <p>Explore</p>
-      </a>
-      <a href=""><img src="img/subscriprion.png" alt="home">
-        <p>Inscrições</p>
-      </a>
-      <a href=""><img src="img/library.png" alt="home">
-        <p>Biblioteca</p>
-      </a>
-      <a href=""><img src="img/history.png" alt="home">
-        <p>Histórico</p>
-      </a>
-      <a href=""><img src="img/playlist.png" alt="home">
-        <p>Playlist</p>
-      </a>
-      <a href=""><img src="img/messages.png" alt="home">
-        <p>Notificações</p>
-      </a>
-      <a href=""><img src="img/show-more.png" alt="home">
-        <p>Mais</p>
-      </a>
-      <hr>
+    <!----------- main ----------->
+    <div class="container" id="container-id">
+      <div class="banner">
+        <a href="fala.html"><img src="img/banner-mulher.jpg" alt="banner" /></a>
+      </div>
+      <div class="list-container">
+        <!-- video 1 -->
+        <div class="vid-list">
+          <a href="play-video.html"
+            ><img src="img/thumbnail1.png" alt="vid1" class="thumbnail"
+          /></a>
+          <div class="flex-div">
+            <img src="img/Jack.png" alt="user" />
+            <div class="vid-info">
+              <a href="play-video.html"
+                >O melhor canal para aprender a investir de forma eficiente</a
+              >
+              <p>Safe Investment</p>
+              <p>15k Visualizações &bull; há 2 dias</p>
+            </div>
+          </div>
+        </div>
+        <!-- video 2 -->
+        <div class="vid-list">
+          <a href="play-video.html"
+            ><img src="img/thumbnail2.png" alt="vid1" class="thumbnail"
+          /></a>
+          <div class="flex-div">
+            <img src="img/cameron.png" alt="user" />
+            <div class="vid-info">
+              <a href="play-video.html"
+                >5 dicas para começar a investir com pouco dinheiro</a
+              >
+              <p>Investindo com Sabedoria</p>
+              <p>15k Visualizações &bull; há 2 dias</p>
+            </div>
+          </div>
+        </div>
+        <!-- video 3 -->
+        <div class="vid-list">
+          <a href="play-video.html"
+            ><img src="img/thumbnail3.png" alt="vid1" class="thumbnail"
+          /></a>
+          <div class="flex-div">
+            <img src="img/megan.png" alt="user" />
+            <div class="vid-info">
+              <a href="play-video.html"
+                >Os principais erros que os iniciantes em investimentos
+                cometem</a
+              >
+              <p>Descomplicando Investimentos</p>
+              <p>15k Visualizações &bull; há 2 dias</p>
+            </div>
+          </div>
+        </div>
+        <!-- video 4 -->
+        <div class="vid-list">
+          <a href="play-video.html"
+            ><img src="img/thumbnail4.png" alt="vid1" class="thumbnail"
+          /></a>
+          <div class="flex-div">
+            <img src="img/tom.png" alt="user" />
+            <div class="vid-info">
+              <a href="play-video.html"
+                >Como diversificar sua carteira de investimentos</a
+              >
+              <p>Investimentos em Foco</p>
+              <p>15k Visualizações &bull; há 2 dias</p>
+            </div>
+          </div>
+        </div>
+        <!-- video 5 -->
+        <div class="vid-list">
+          <a href="play-video.html"
+            ><img src="img/thumbnail5.png" alt="vid1" class="thumbnail"
+          /></a>
+          <div class="flex-div">
+            <img src="img/simon.png" alt="user" />
+            <div class="vid-info">
+              <a href="play-video.html"
+                >Os melhores investimentos para iniciantes em 2023</a
+              >
+              <p>Investir e Crescer</p>
+              <p>15k Visualizações &bull; há 2 dias</p>
+            </div>
+          </div>
+        </div>
+        <!-- video 6 -->
+        <div class="vid-list">
+          <a href="play-video.html"
+            ><img src="img/thumbnail6.png" alt="vid1" class="thumbnail"
+          /></a>
+          <div class="flex-div">
+            <img src="img/tom.png" alt="user" />
+            <div class="vid-info">
+              <a href="play-video.html">Como investir em ações sem medo</a>
+              <p>Investimentos Inteligentes</p>
+              <p>15k Visualizações &bull; há 2 dias</p>
+            </div>
+          </div>
+        </div>
+        <!-- video 7 -->
+        <div class="vid-list">
+          <a href="play-video.html"
+            ><img src="img/thumbnail7.png" alt="vid1" class="thumbnail"
+          /></a>
+          <div class="flex-div">
+            <img src="img/Jack.png" alt="user" />
+            <div class="vid-info">
+              <a href="play-video.html"
+                >O que é o mercado financeiro e como funciona</a
+              >
+              <p>Mundo dos Investimentos</p>
+              <p>15k Visualizações &bull; há 2 dias</p>
+            </div>
+          </div>
+        </div>
+        <!-- video 8 -->
+        <div class="vid-list">
+          <a href="play-video.html"
+            ><img src="img/thumbnail8.png" alt="vid1" class="thumbnail"
+          /></a>
+          <div class="flex-div">
+            <img src="img/cameron.png" alt="user" />
+            <div class="vid-info">
+              <a href="play-video.html"
+                >Como lidar com a volatilidade do mercado de ações</a
+              >
+              <p>Investimentos para Todos</p>
+              <p>15k Visualizações &bull; há 2 dias</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="subscribed-list">
-      <h3>INSCRIÇÕES</h3>
-      <a href=""><img src="img/Jack.png" alt="User">
-        <p>Jack Sparrow</p>
-      </a>
-      <a href=""><img src="img/simon.png" alt="User">
-        <p>Raul Fonseca</p>
-      </a>
-      <a href=""><img src="img/tom.png" alt="User">
-        <p>Eduardo Rocha</p>
-      </a>
-      <a href=""><img src="img/cameron.png" alt="User">
-        <p>Sophia Satuf</p>
-      </a>
-      <a href=""><img src="img/megan.png" alt="User">
-        <p>Davi Pinho</p>
-      </a>
-    </div>
-  </div>
 
-  <!----------- main ----------->
-  <div class="container">
-    <div class="banner">
-      <a href="fala.html"><img src="img/banner-mulher.jpg" alt="banner"></a>
-    </div>
-    <div class="list-container">
-      <!-- video 1 -->
-      <div class="vid-list">
-        <a href="play-video.html"><img src="img/thumbnail1.png" alt="vid1" class="thumbnail"></a>
-        <div class="flex-div">
-          <img src="img/Jack.png" alt="user">
-          <div class="vid-info">
-            <a href="play-video.html">O melhor canal para aprender a investir de forma eficiente</a>
-            <p>Safe Investment</p>
-            <p>15k Visualizações &bull; há 2 dias</p>
-          </div>
-        </div>
-      </div>
-      <!-- video 2 -->
-      <div class="vid-list">
-        <a href="play-video.html"><img src="img/thumbnail2.png" alt="vid1" class="thumbnail"></a>
-        <div class="flex-div">
-          <img src="img/cameron.png" alt="user">
-          <div class="vid-info">
-            <a href="play-video.html">5 dicas para começar a investir com pouco dinheiro</a>
-            <p>Investindo com Sabedoria</p>
-            <p>15k Visualizações &bull; há 2 dias</p>
-          </div>
-        </div>
-      </div>
-      <!-- video 3 -->
-      <div class="vid-list">
-        <a href="play-video.html"><img src="img/thumbnail3.png" alt="vid1" class="thumbnail"></a>
-        <div class="flex-div">
-          <img src="img/megan.png" alt="user">
-          <div class="vid-info">
-            <a href="play-video.html">Os principais erros que os iniciantes em investimentos cometem</a>
-            <p>Descomplicando Investimentos</p>
-            <p>15k Visualizações &bull; há 2 dias</p>
-          </div>
-        </div>
-      </div>
-      <!-- video 4 -->
-      <div class="vid-list">
-        <a href="play-video.html"><img src="img/thumbnail4.png" alt="vid1" class="thumbnail"></a>
-        <div class="flex-div">
-          <img src="img/tom.png" alt="user">
-          <div class="vid-info">
-            <a href="play-video.html">Como diversificar sua carteira de investimentos</a>
-            <p>Investimentos em Foco</p>
-            <p>15k Visualizações &bull; há 2 dias</p>
-          </div>
-        </div>
-      </div>
-      <!-- video 5 -->
-      <div class="vid-list">
-        <a href="play-video.html"><img src="img/thumbnail5.png" alt="vid1" class="thumbnail"></a>
-        <div class="flex-div">
-          <img src="img/simon.png" alt="user">
-          <div class="vid-info">
-            <a href="play-video.html">Os melhores investimentos para iniciantes em 2023</a>
-            <p>Investir e Crescer</p>
-            <p>15k Visualizações &bull; há 2 dias</p>
-          </div>
-        </div>
-      </div>
-      <!-- video 6 -->
-      <div class="vid-list">
-        <a href="play-video.html"><img src="img/thumbnail6.png" alt="vid1" class="thumbnail"></a>
-        <div class="flex-div">
-          <img src="img/tom.png" alt="user">
-          <div class="vid-info">
-            <a href="play-video.html">Como investir em ações sem medo</a>
-            <p>Investimentos Inteligentes</p>
-            <p>15k Visualizações &bull; há 2 dias</p>
-          </div>
-        </div>
-      </div>
-      <!-- video 7 -->
-      <div class="vid-list">
-        <a href="play-video.html"><img src="img/thumbnail7.png" alt="vid1" class="thumbnail"></a>
-        <div class="flex-div">
-          <img src="img/Jack.png" alt="user">
-          <div class="vid-info">
-            <a href="play-video.html">O que é o mercado financeiro e como funciona</a>
-            <p>Mundo dos Investimentos</p>
-            <p>15k Visualizações &bull; há 2 dias</p>
-          </div>
-        </div>
-      </div>
-      <!-- video 8 -->
-      <div class="vid-list">
-        <a href="play-video.html"><img src="img/thumbnail8.png" alt="vid1" class="thumbnail"></a>
-        <div class="flex-div">
-          <img src="img/cameron.png" alt="user">
-          <div class="vid-info">
-            <a href="play-video.html">Como lidar com a volatilidade do mercado de ações</a>
-            <p>Investimentos para Todos</p>
-            <p>15k Visualizações &bull; há 2 dias</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+    <script src="addPublicacao.js"></script>
+    <script src="addClasse.js"></script>
+    <script src="busca.js"></script>
+  </body>
 </html>
