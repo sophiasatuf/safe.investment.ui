@@ -93,6 +93,22 @@
             </form>
           </div>
         </div>
+        <div id="modal-rating-bkg">
+          <div id="modal-rating-content" class="modal-rating-content-off">
+            <h4>Cadastrar Rating</h4>
+            <form id="add-rating-form" method="post" onsubmit="">
+              <div>
+                <label for="rating">Rating(1 a 5) </label><br />
+                <input type="text" name="rating" id="rating" />
+              </div>
+              <div>
+                <button type="submit" id="submit" name="submit" value="submit">
+                  Adicionar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
         <img src="img/notification.png" alt="notification" />
         <a href="login.html"
           ><img src="img/user1.png" alt="Jack" class="user-icon"
@@ -164,7 +180,7 @@
               </div>
             </div>
             <-- comentário 1 -->
-            <div class="old-comment">
+            <!-- <div class="old-comment">
               <img src="img/cameron.png" alt="User" />
               <div>
                 <h3>Sophia Satuf <span>há 2 dias</span></h3>
@@ -183,9 +199,9 @@
                   <a href="">Todas as respostas</a>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- comentário 2 -->
-            <div class="old-comment">
+            <!-- <div class="old-comment">
               <img src="img/simon.png" alt="User" />
               <div>
                 <h3>Eduardo Rocha <span>há 2 dias</span></h3>
@@ -206,7 +222,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="right-sidebar" id="right-sidebar">
           <!-- video 1 -->
           <!-- <div class="side-video-list">
@@ -325,5 +341,6 @@
     <script src="busca.js"></script>
     <script src="play-video.js"></script>
     <script src="rightSideBar.js"></script>
+    <script src="addRating.js"></script>
   </body>
 </html>

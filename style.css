@@ -116,6 +116,24 @@ nav {
   color: black;
 }
 
+.modal-rating-bkg{
+  background-color: #fff;
+  position: fixed;
+  top: 65vh;
+  right: 20vw;
+  padding: 9px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-rating-content-off {
+  display: none;
+}
+
+.modal-rating-content {
+  color: black;
+}
+
 /*----------- sidebar -----------*/
 .sidebar {
     background: #fff;
@@ -427,10 +445,6 @@ nav {
     font-size: 13px;
     color: #5a5a5a;
     margin-top: 15px;
-}
-
-#botao-inscrever {
-  
 }
 
 /*----------- comentários -----------*/

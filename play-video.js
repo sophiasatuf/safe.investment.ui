@@ -208,7 +208,7 @@ function playVideo() {
         <a href=""
           ><img src="img/share.png" alt="share" />Compartilhar</a
         >
-        <a href=""><img src="img/save.png" alt="save" />Salvar</a>
+        <a><img onclick="openModalRating()" src="img/save.png" alt="save" />Avaliar</a>
       </div>
     </div>
     <hr />
