@@ -126,3 +126,19 @@ section .section-title {
     height: 120px;
     border-radius: 50%;
 }
+
+.btn-voltar {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007b5e;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-voltar:hover {
+    background-color: #006c53;
+  }
+  
