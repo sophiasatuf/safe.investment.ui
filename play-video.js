@@ -1,5 +1,7 @@
 let isLiked = false;
 let isDisliked = false;
+let isComentarioLiked = false;
+let isComentarioDisliked = false;
 
 function like(publicacaoId) {
   if (!isLiked) {
@@ -11,11 +13,29 @@ function like(publicacaoId) {
 }
 
 function dislike(publicacaoId) {
-  if (!isLiked) {
+  if (!isDisliked) {
     fetch(`http://localhost:6789/publicacao/dislike/${publicacaoId}`, {
       method: "POST",
     });
     isDisliked = true;
+  }
+}
+
+function comentarioLike(comentarioId) {
+  if (!isComentarioLiked) {
+    fetch(`http://localhost:6789/comentario/like/${comentarioId}`, {
+      method: "POST",
+    });
+    isComentarioLiked = true;
+  }
+}
+
+function comentarioDislike(comentarioId) {
+  if (!isComentarioDisliked) {
+    fetch(`http://localhost:6789/comentario/dislike/${comentarioId}`, {
+      method: "POST",
+    });
+    isComentarioDisliked = true;
   }
 }
 
@@ -88,7 +108,58 @@ function comentar(publicacaoId) {
   fetch(
     `http://localhost:6789/comentario/cadastro?publicacaoId=${publicacaoId}&userId=${userId}&descricao=${descricao}`,
     { method: "POST" }
-  ).then(() => (document.getElementById("comentario-input").value = ""));
+  ).then(() => {
+    document.getElementById("comentario-input").value = "";
+    genComentarios(publicacaoId);
+  });
+}
+
+function genComentarios(publicacaoId) {
+  const numeroAleatorioAvatar = Math.floor(Math.random() * 6) + 1;
+  let comentarios = "";
+  fetch(`http://localhost:6789/comentarios/${publicacaoId}`, {
+    method: "GET",
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      res.forEach((comentario) => {
+        comentarios =
+          comentarios +
+          `
+      <div class="old-comment">
+        <img src="img/user${numeroAleatorioAvatar}.png" alt="User" />
+        <div>
+          <h3>Sophia Satuf <span>há 2 dias</span></h3>
+          <p>
+            ${comentario.descricao}
+          </p>
+          <div class="comment-action">
+            <img onclick="comentarioLike('${comentario.codigo}')" src="img/like.png" alt="like" />
+            <span>${comentario.likes}</span>
+            <img onclick="comentarioDislike('${comentario.codigo}')" src="img/dislike.png" alt="dislike" />
+            <span>${comentario.dislikes}</span>
+            <span>Responder</span>
+            <a href="">Todas as respostas</a>
+          </div>
+        </div>
+      </div>
+      
+      `;
+      });
+      document.getElementById("comments").innerHTML = comentarios;
+    });
+}
+
+function handleNumComentarios(publicacaoId) {
+  fetch(`http://localhost:6789/comentarios/contar/${publicacaoId}`, {
+    method: "GET",
+  })
+    .then((res) => res.text())
+    .then((res) => {
+      document.getElementById("n-comentarios").innerHTML = `<h4>${Number(
+        res
+      )} Comentários</h4>`;
+    });
 }
 
 function playVideo() {
@@ -157,7 +228,7 @@ function playVideo() {
       <p id="classe-descricao">
       </p>
       <hr />
-      <h4>134 Comentários</h4>
+      <h4 id="n-comentarios"><h4>Comentários</h4></h4>
       <div class="add-comment">
         <img src="img/user${numeroAleatorio2Avatar}.png" alt="User" />
         <input id="comentario-input" type="text" placeholder="Adicione um comentário..." />
@@ -165,12 +236,14 @@ function playVideo() {
           publicacaoData.codigo
         }')">Comentar</button>
       </div>
-      
+      <div id="comments"></div>
       `;
       document.getElementById("video-gen").innerHTML = videoGen;
 
       isInscrito(publicacaoData.classeId);
       setProfessorInscritos(publicacaoData.classeId);
+      genComentarios(publicacaoData.codigo);
+      handleNumComentarios(publicacaoData.codigo);
     });
 }
 
