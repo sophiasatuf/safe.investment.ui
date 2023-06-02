@@ -60,7 +60,6 @@ function publicar(e) {
   const titulo = document.getElementById("titulo").value;
   const classeId = document.getElementById("classe-select").value;
   const dataPostagem = formatDate(new Date());
-  console.log(urlvideo, hashtags, titulo, classeId, dataPostagem);
   fetch(
     `http://localhost:6789/publicacao/cadastro?urlVideo=${urlvideo}&titulo=${titulo}&classeId=${classeId}&dataPostagem=${dataPostagem}&hashtags=${hashtags}`,
     { method: "POST" }

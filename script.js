@@ -12,7 +12,6 @@ function checkLogin() {
     const isLogged = localStorage.getItem("isLogged");
     
     if(!isLogged) {
-        console.log(isLogged);
         window.location.href = "\login.html";
     }
 }

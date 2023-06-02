@@ -5,7 +5,6 @@ document
 function handleButtonClasse() {
   const uploadButton = document.getElementById("add-classe-btn");
   const isProfessor = localStorage.getItem("isProfessor");
-  console.log(isProfessor);
   if (isProfessor === "false") {
     uploadButton.setAttribute("class", "block-btn-aluno");
   }

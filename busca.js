@@ -5,7 +5,6 @@ function busca() {
   fetch(`http://localhost:6789/publicacao/busca?stringBusca=${stringBusca}`)
     .then((res) => res.json())
     .then((response) => {
-      console.log(response);
       const publicacoes = response;
 
       if (publicacoes.length > 0) {
