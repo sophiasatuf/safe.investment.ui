@@ -167,13 +167,6 @@ document.querySelector('#chatbotInput').addEventListener('submit',(evento) =>{
     console.log(chatMsg);
     let msg = document.querySelector('#chatbotInput input');
 
-    let fullName = '';
-    let age = '';
-    let senha = '';
-    let email = '';
-    let cpf = '';
-    let isProfesor = false;
-
     if (msg.value.length > 0) {
         chatMsg.innerHTML += `<div class="msgBox darker msgRemetente">
                                 <p>${msg.value}</p>
