@@ -82,6 +82,15 @@ function setProfessorInscritos(classeId) {
     });
 }
 
+function comentar(publicacaoId) {
+  const userId = localStorage.getItem("usuarioData").split("ID: ")[1][0];
+  const descricao = document.getElementById("comentario-input").value;
+  fetch(
+    `http://localhost:6789/comentario/cadastro?publicacaoId=${publicacaoId}&userId=${userId}&descricao=${descricao}`,
+    { method: "POST" }
+  ).then(() => (document.getElementById("comentario-input").value = ""));
+}
+
 function playVideo() {
   const publicacaoId = localStorage.getItem("publicacaoId");
 
@@ -93,6 +102,8 @@ function playVideo() {
     .then((res) => res.json())
     .then((publicacaoData) => {
       console.log(publicacaoData);
+      const numeroAleatorioAvatar = Math.floor(Math.random() * 6) + 1;
+      const numeroAleatorio2Avatar = Math.floor(Math.random() * 6) + 1;
 
       const videoGen = `
       <iframe
@@ -131,7 +142,7 @@ function playVideo() {
     </div>
     <hr />
     <div class="publisher">
-      <img src="img/Jack.png" alt="Canal" />
+      <img src="img/user${numeroAleatorioAvatar}.png" alt="Canal" />
       <div id="professor-inscritos">
         <p>Safe Investment</p>
         <span>500k Inscritos</span>
@@ -148,8 +159,11 @@ function playVideo() {
       <hr />
       <h4>134 Comentários</h4>
       <div class="add-comment">
-        <img src="img/Jack.png" alt="User" />
-        <input type="text" placeholder="Adicione um comentário..." />
+        <img src="img/user${numeroAleatorio2Avatar}.png" alt="User" />
+        <input id="comentario-input" type="text" placeholder="Adicione um comentário..." />
+        <button type="button" onclick="comentar('${
+          publicacaoData.codigo
+        }')">Comentar</button>
       </div>
       
       `;

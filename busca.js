@@ -6,6 +6,7 @@ function busca() {
     .then((res) => res.json())
     .then((response) => {
       const publicacoes = response;
+      const numeroAleatorioAvatar = Math.floor(Math.random() * 6) + 1;
 
       if (publicacoes.length > 0) {
         let res = "";
@@ -18,7 +19,7 @@ function busca() {
               ><img onclick="localStorage.setItem('publicacaoId', '${publicacao.codigo}')" src="img/thumbnail1.png" alt="vid1" class="thumbnail"
             /></a>
             <div class="flex-div">
-              <img src="img/Jack.png" alt="user" />
+              <img src="img/user${numeroAleatorioAvatar}.png" alt="user" />
               <div class="vid-info">
                 <a href="play-video.html"
                   >${publicacao.titulo}</a
