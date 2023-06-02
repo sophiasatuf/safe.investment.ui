@@ -2,6 +2,8 @@ let isLiked = false;
 let isDisliked = false;
 let isComentarioLiked = false;
 let isComentarioDisliked = false;
+let likes = -1;
+let dislikes = -1;
 
 function like(publicacaoId) {
   if (!isLiked) {
@@ -9,6 +11,8 @@ function like(publicacaoId) {
       method: "POST",
     });
     isLiked = true;
+    likes++;
+    document.getElementById("likes").innerHTML = `<img src="img/like.png" alt="like" />${likes}`
   }
 }
 
@@ -18,6 +22,8 @@ function dislike(publicacaoId) {
       method: "POST",
     });
     isDisliked = true;
+    dislikes++;
+    document.getElementById("dislikes").innerHTML = `<img src="img/dislike.png" alt="dislikes" />${dislikes}`
   }
 }
 
@@ -175,6 +181,8 @@ function playVideo() {
       console.log(publicacaoData);
       const numeroAleatorioAvatar = Math.floor(Math.random() * 6) + 1;
       const numeroAleatorio2Avatar = Math.floor(Math.random() * 6) + 1;
+      likes = publicacaoData.likes;
+      dislikes = publicacaoData.dislikes
 
       const videoGen = `
       <iframe
@@ -197,13 +205,13 @@ function playVideo() {
           (24 * 60 * 60 * 1000)
       )} dia(s)</p>
       <div>
-        <a><img onclick="like('${
+        <a id="likes"><img onclick="like('${
           publicacaoData.codigo
-        }')" src="img/like.png" alt="like" />${publicacaoData.likes}</a>
-        <a><img onclick="dislike('${
+        }')" src="img/like.png" alt="like" />${likes}</a>
+        <a id="dislikes"><img onclick="dislike('${
           publicacaoData.codigo
         }')" src="img/dislike.png" alt="dislike" />${
-        publicacaoData.dislikes
+        dislikes
       }</a>
         <a href=""
           ><img src="img/share.png" alt="share" />Compartilhar</a
