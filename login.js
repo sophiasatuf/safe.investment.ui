@@ -1,7 +1,7 @@
-function addUser(fullName, age, senha, email, cpf, isProfesor) {
+function addUser(fullName, dataNascimento, senha, email, cpf, isProfesor) {
   let translateProfessor = false;
   isProfesor === 'on' && (translateProfessor = true);
-  fetch(`http://localhost:6789/user/cadastro?age=${age}&cpf=${cpf}&email=${email}&senha=${senha}&fullName=${fullName}&isProfessor=${translateProfessor}`, {method:"POST"});
+  fetch(`http://localhost:6789/user/cadastro?dataNascimento=${dataNascimento}&cpf=${cpf}&email=${email}&senha=${senha}&fullName=${fullName}&isProfessor=${translateProfessor}`, {method:"POST"});
 }
 
 async function loginUser(email, senha) {
